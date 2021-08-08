@@ -12,7 +12,6 @@ java {
 dependencies {
     implementation(Libs.Kotlin.stdlib)
     implementation(Libs.Coroutines.core)
-
     implementation(Libs.Network.Retrofit.retrofit)
     kapt(Libs.Network.Moshi.codegen)
     implementation(Libs.Network.Moshi.moshi)
