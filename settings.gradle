@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "SpaceX App"
 include ':app'
+include ':common-spacex-api'
