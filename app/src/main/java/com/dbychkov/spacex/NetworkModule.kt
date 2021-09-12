@@ -4,7 +4,6 @@ import com.dbychkov.spacex.api.LaunchesService
 import com.dbychkov.spacex.api.RocketsService
 import com.dbychkov.spacex.api.adapter.ZonedDateTimeAdapter
 import com.squareup.moshi.Moshi
-import com.squareup.moshi.addAdapter
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
