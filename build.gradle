@@ -1,4 +1,10 @@
 buildscript {
+    ext.buildConfig = [
+            'compileSdk': 31,
+            'minSdk'    : 21,
+            'targetSdk' : 31
+    ]
+
     repositories {
         maven { url "https://plugins.gradle.org/m2/" }
         google()
@@ -7,7 +13,8 @@ buildscript {
     dependencies {
         classpath libs.androidGradle
         classpath libs.kotlinGradle
-        classpath libs.ktlint
+        classpath libs.ktlintGradle
+        classpath libs.hiltGradle
     }
 }
 

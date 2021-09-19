@@ -1,27 +1,26 @@
 package com.dbychkov.spacex.api
 
+import com.dbychkov.spacex.api.model.Launch
 import retrofit2.http.GET
-
-import com.dbychkov.spacex.api.model.dto.LaunchDto
 import retrofit2.http.Path
 
 interface LaunchesService {
 
     @GET("launches")
-    suspend fun getAllLaunches(): List<LaunchDto>
+    suspend fun getAllLaunches(): List<Launch>
 
     @GET("launches/past")
-    suspend fun getPastLaunches(): List<LaunchDto>
+    suspend fun getPastLaunches(): List<Launch>
 
     @GET("launches/upcoming")
-    suspend fun getUpcomingLaunches(): List<LaunchDto>
+    suspend fun getUpcomingLaunches(): List<Launch>
 
     @GET("launches/{id}")
-    suspend fun getLaunch(@Path("id") id: String): LaunchDto
+    suspend fun getLaunch(@Path("id") id: String): Launch
 
     @GET("launches/latest")
-    suspend fun getLatestLaunches(): LaunchDto
+    suspend fun getLatestLaunches(): Launch
 
     @GET("launches/next")
-    suspend fun getNextLaunches(): LaunchDto
+    suspend fun getNextLaunch(): Launch
 }
