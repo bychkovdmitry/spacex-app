@@ -7,8 +7,5 @@ dependencyResolutionManagement {
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
-
 rootProject.name = "SpaceX App"
-
-include ':app',
-        ':common-spacex-api'
+include ':app'

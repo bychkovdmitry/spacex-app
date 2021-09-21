@@ -1,8 +1,10 @@
 package com.dbychkov.spacex.di
 
 import com.dbychkov.spacex.BuildConfig
-import com.dbychkov.spacex.api.LaunchesService
-import com.dbychkov.spacex.api.adapter.ZonedDateTimeAdapter
+import com.dbychkov.spacex.ZonedDateTimeAdapter
+import com.dbychkov.spacex.data.remote.LaunchApi
+import com.dbychkov.spacex.data.repository.LaunchRepositoryImpl
+import com.dbychkov.spacex.domain.repository.LaunchRepository
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -63,8 +65,14 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideLaunchesService(retrofit: Retrofit): LaunchesService {
-        return retrofit.create(LaunchesService::class.java)
+    fun provideLaunchApi(retrofit: Retrofit): LaunchApi {
+        return retrofit.create(LaunchApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideLaunchRepository(launchApi: LaunchApi): LaunchRepository {
+        return LaunchRepositoryImpl(launchApi)
     }
 
     private const val API_URL = "https://api.spacexdata.com/v4/"
