@@ -6,7 +6,5 @@ interface LaunchRepository {
 
     suspend fun getAllLaunches(): List<Launch>
 
-    suspend fun getNextLaunch(): Launch
-
     suspend fun getLaunchById(id: String): Launch
 }

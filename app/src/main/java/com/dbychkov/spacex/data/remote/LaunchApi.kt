@@ -11,7 +11,4 @@ interface LaunchApi {
 
     @GET("launches/{id}")
     suspend fun getLaunchById(@Path("id") id: String): LaunchDto
-
-    @GET("launches/next")
-    suspend fun getNextLaunch(): LaunchDto
 }

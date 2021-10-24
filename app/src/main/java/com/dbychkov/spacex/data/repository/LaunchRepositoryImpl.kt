@@ -14,10 +14,6 @@ class LaunchRepositoryImpl @Inject constructor(
         return launchApi.getAllLaunches().map { it.toModel() }
     }
 
-    override suspend fun getNextLaunch(): Launch {
-        return launchApi.getNextLaunch().toModel()
-    }
-
     override suspend fun getLaunchById(id: String): Launch {
         return launchApi.getLaunchById(id).toModel()
     }

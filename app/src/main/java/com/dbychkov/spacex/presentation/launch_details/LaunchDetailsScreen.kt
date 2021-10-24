@@ -1,4 +1,4 @@
-package com.dbychkov.spacex.presentation.next_launch
+package com.dbychkov.spacex.presentation.launch_details
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,14 +15,16 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
-fun NextLaunchScreen(
-    viewModel: NextLaunchViewModel = hiltViewModel()
+fun LaunchDetailsScreen(
+    viewModel: LaunchDetailsViewModel = hiltViewModel()
 ) {
     val state = viewModel.state
+
     Box(modifier = Modifier.fillMaxSize()) {
-        state.launch?.let { launch ->
-            Text(text = launch.name)
+        if (state.launch != null) {
+            Text(text = state.launch.name + " " + state.launch.launchDateUTC)
         }
+
         if (state.error != null) {
             Text(
                 text = state.error.message ?: "",
